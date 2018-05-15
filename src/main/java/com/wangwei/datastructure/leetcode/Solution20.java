@@ -7,7 +7,7 @@ import java.util.Stack;
  * @Auther wangwei
  * @Date 2018/5/1 下午2:01
  */
-public class Solution {
+public class Solution20 {
     public boolean isValid(String s){
 
         Stack<Character> stack = new Stack<>();
