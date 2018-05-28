@@ -1,4 +1,6 @@
-package com.wangwei.datastructure.leetcode;
+package com.wangwei.leetcode.leetcode_203;
+
+import com.wangwei.leetcode.ListNode;
 
 /**
  * @Auther wangwei
@@ -8,7 +10,7 @@ package com.wangwei.datastructure.leetcode;
 输入: 1->2->6->3->4->5->6, val = 6
 输出: 1->2->3->4->5
  */
-public class Solution203 {
+public class Solution1 {
     public ListNode removeElements(ListNode head, int val) {
 
         while (head != null && head.val == val){

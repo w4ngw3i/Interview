@@ -1,4 +1,4 @@
-package com.wangwei.datastructure.leetcode;
+package com.wangwei.leetcode.leetcode_20;
 
 
 import java.util.Stack;
@@ -7,7 +7,7 @@ import java.util.Stack;
  * @Auther wangwei
  * @Date 2018/5/1 下午2:01
  */
-public class Solution20 {
+public class Solution {
     public boolean isValid(String s){
 
         Stack<Character> stack = new Stack<>();

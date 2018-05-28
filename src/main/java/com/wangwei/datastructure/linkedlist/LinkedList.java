@@ -7,7 +7,7 @@ package com.wangwei.datastructure.linkedlist;
 public class LinkedList<E> {
 
     private class Node{
-        private E e;
+        public E e;
         public Node next;
 
         public Node(E e, Node next){
@@ -38,6 +38,15 @@ public class LinkedList<E> {
         size = 0;
     }
 
+//    private Node head;
+//
+//    private int size;
+//
+//    public LinkedList() {
+//        head = null;
+//        size = 0;
+//    }
+
     /**
      * 获取链表中元素的个数
      * @return
@@ -55,7 +64,7 @@ public class LinkedList<E> {
     }
 
 //    /**
-//     * 向链表头添加元素 不实用虚拟头节点 dummyhead
+//     * 向链表头添加元素 不使用虚拟头节点 dummyhead
 //     * @param e
 //     */
 //    public void addFirst(E e){
