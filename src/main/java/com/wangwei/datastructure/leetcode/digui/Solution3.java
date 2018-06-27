@@ -1,6 +1,6 @@
-package com.wangwei.leetcode.digui;
+package com.wangwei.datastructure.leetcode.digui;
 
-import com.wangwei.leetcode.ListNode;
+import com.wangwei.datastructure.leetcode.ListNode;
 
 /**
  * @Auther wangwei

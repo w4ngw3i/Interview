@@ -1,4 +1,4 @@
-package com.wangwei.leetcode;
+package com.wangwei.datastructure.leetcode;
 
 /**
  * @Auther wangwei

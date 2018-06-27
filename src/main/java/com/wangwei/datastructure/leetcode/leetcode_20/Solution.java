@@ -1,4 +1,4 @@
-package com.wangwei.leetcode.leetcode_20;
+package com.wangwei.datastructure.leetcode.leetcode_20;
 
 
 import java.util.Stack;

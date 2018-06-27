@@ -1,8 +1,6 @@
-package com.wangwei.leetcode.leetcode_203;
+package com.wangwei.datastructure.leetcode.leetcode_203;
 
-import com.wangwei.leetcode.ListNode;
-
-import javax.sound.midi.Soundbank;
+import com.wangwei.datastructure.leetcode.ListNode;
 
 /**
  * @Auther wangwei
