@@ -1,5 +1,7 @@
 package com.wangwei.datastructure.binarytree;
 
+import java.util.Stack;
+
 /**
  * @Auther wangwei
  * @Date 2018/6/24 下午4:16
@@ -94,6 +96,20 @@ public class BST<E extends Comparable<E>> {
     }
 
     /**
+     * 二分搜索树的中序遍历
+     */
+    public void inOrder(){
+        inOrder(root);
+    }
+
+    /**
+     * 二分搜索树的后序遍历
+     */
+    public void postOrder(){
+        postOrder(root);
+    }
+
+    /**
      * 二分搜索树的前序遍历, 递归算法
      */
     private void  preOrder(Node node){
@@ -104,6 +120,50 @@ public class BST<E extends Comparable<E>> {
             preOrder(node.left);
             preOrder(node.right);
         }
+    }
+
+
+    /**
+     * 二分搜索树的前序遍历, 非递归算法
+     */
+    private void preOrderNR(){
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            Node cur = stack.pop();
+            System.out.println(cur.e);
+
+            if (cur.right != null)
+                stack.push(cur.right);
+            if (cur.left != null)
+                stack.push(cur.left);
+        }
+
+    }
+
+
+    /**
+     * 二分搜索树的中序遍历, 递归算法
+     * @param node
+     */
+    private void inOrder(Node node){
+        if (node == null)
+            return;
+        inOrder(node.left);
+        System.out.println(node.e);
+        inOrder(node.right);
+    }
+
+    /**
+     * 二分搜索树的后序遍历, 递归算法
+     * @param node
+     */
+    private void postOrder(Node node){
+        if (node == null)
+            return;
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.e);
     }
 
     @Override

@@ -8,7 +8,10 @@ public class Main {
             bst.add(arr[i]);
         }
 
-        bst.preOrder();
+//        bst.preOrder();
         System.out.println(bst);
+        bst.inOrder();
+        System.out.println();
+        bst.postOrder();
     }
 }
