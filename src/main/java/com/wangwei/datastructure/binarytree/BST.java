@@ -1,5 +1,7 @@
 package com.wangwei.datastructure.binarytree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -87,6 +89,26 @@ public class BST<E extends Comparable<E>> {
             return contains(node.right, e);
     }
 
+    /**
+     * 获取二分搜索树中最小值
+     * @return
+     */
+    public E minimum(){
+        if (size == 0)
+            throw new IllegalArgumentException("BST is Empty");
+        return minimum(root).e;
+    }
+
+    /**
+     * 返回最小值所在的节点
+     * @param node
+     * @return
+     */
+    private Node minimum(Node node){
+        if (node.left == null)
+            return node;
+       return minimum(node.left);
+    }
 
     /**
      * 二分搜索树的前序遍历
@@ -164,6 +186,23 @@ public class BST<E extends Comparable<E>> {
         postOrder(node.left);
         postOrder(node.right);
         System.out.println(node.e);
+    }
+
+    /**
+     * 二分搜索树的层序遍历/广度遍历
+     */
+    public void levelOrder(){
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            Node cur = queue.remove();
+            System.out.println(cur.e);
+
+            if (cur.left != null)
+                queue.add(cur.left);
+            if (cur.right != null)
+                queue.add(cur.right);
+        }
     }
 
     @Override
