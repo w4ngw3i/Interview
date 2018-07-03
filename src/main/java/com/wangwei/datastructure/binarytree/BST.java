@@ -90,7 +90,7 @@ public class BST<E extends Comparable<E>> {
     }
 
     /**
-     * 获取二分搜索树中最小值
+     * 获取二分搜索树中最小元素
      * @return
      */
     public E minimum(){
@@ -100,7 +100,71 @@ public class BST<E extends Comparable<E>> {
     }
 
     /**
-     * 返回最小值所在的节点
+     * 获取二分搜索树中最大元素
+     * @return
+     */
+    public E minimax(){
+        if (size == 0)
+            throw new IllegalArgumentException("BST is Empty");
+        return minimax(root).e;
+    }
+
+    /**
+     * 从二分搜索树中删除最小值所在节点，返回最小值
+     * @return
+     */
+    public E removeMin(){
+        E e = minimum();
+        root = removeMin(root);
+        return e;
+    }
+
+    /**
+     * 从二分搜索树中删除最大值所在节点，返回最小值
+     * @return
+     */
+    public E removeMax(){
+        E e = minimax();
+        root = removeMax(root);
+        return e;
+    }
+
+    /**
+     * 删除以node为根的二分搜索树中最小节点
+     * 返回删除节点后新的二分搜索树的根
+     * @param node
+     * @return
+     */
+    private Node removeMin(Node node){
+        if (node.left == null){
+            Node rightNode = node.right;
+            node.right = null;
+            size--;
+            return rightNode;
+        }
+        node.left = removeMin(node.left);
+        return node;
+    }
+
+    /**
+     * 删除以node为根的二分搜索树中最大节点
+     * 返回删除节点后新的二分搜索树的根
+     * @param node
+     * @return
+     */
+    private Node removeMax(Node node){
+        if (node.right == null){
+            Node rightNode = node.left;
+            node.left = null;
+            size--;
+            return rightNode;
+        }
+        node.right = removeMax(node.right);
+        return node;
+    }
+
+    /**
+     * 返回以node为根节点二分搜索树中最小元素所在的节点
      * @param node
      * @return
      */
@@ -108,6 +172,17 @@ public class BST<E extends Comparable<E>> {
         if (node.left == null)
             return node;
        return minimum(node.left);
+    }
+
+    /**
+     * 返回以node为根节点二分搜索树中最大元素所在的节点
+     * @param node
+     * @return
+     */
+    private Node minimax(Node node){
+        if (node.right == null)
+            return node;
+       return minimax(node.right);
     }
 
     /**
