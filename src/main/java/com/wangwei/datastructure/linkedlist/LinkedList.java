@@ -174,6 +174,7 @@ public class LinkedList<E> {
         return retNode.e;
     }
 
+
     public E removeFirst(){
         return remove(0);
     }
