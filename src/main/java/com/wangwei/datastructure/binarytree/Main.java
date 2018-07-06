@@ -22,8 +22,11 @@ public class Main {
         bst.levelOrder();*/
         Random random = new Random();
 
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 10; i++)
             bst.add(random.nextInt(10000));
+        bst.preOrder();
+        bst.preOrder();
+
 
         ArrayList<Integer> nums = new ArrayList<>();
         while (!bst.isEmpty())
