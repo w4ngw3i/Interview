@@ -1,4 +1,8 @@
-package com.wangwei.datastructure.map;
+package com.wangwei.datastructure.collection.map;
+
+import com.wangwei.util.FileOperation;
+
+import java.util.ArrayList;
 
 public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
 
@@ -107,7 +111,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
     }
 
     @Override
-    public boolean contailns(K key) {
+    public boolean contains(K key) {
         return getNode(root, key) != null;
     }
     
@@ -181,4 +185,30 @@ public class BSTMap<K extends Comparable<K>, V> implements Map<K, V> {
         node.left = removeMin(node.left);
         return node;
     }
+
+
+    public static void main(String[] args){
+
+        System.out.println("Pride and Prejudice");
+
+        ArrayList<String> words = new ArrayList<>();
+        if(FileOperation.readFile("pride-and-prejudice.txt", words)) {
+            System.out.println("Total words: " + words.size());
+
+            BSTMap<String, Integer> map = new BSTMap<>();
+            for (String word : words) {
+                if (map.contains(word))
+                    map.set(word, map.get(word) + 1);
+                else
+                    map.add(word, 1);
+            }
+
+            System.out.println("Total different words: " + map.size());
+            System.out.println("Frequency of PRIDE: " + map.get("pride"));
+            System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
+        }
+
+        System.out.println();
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.wangwei.datastructure.set;
+package com.wangwei.datastructure.collection.set;
 
 public interface Set<E>{
     void add(E e);

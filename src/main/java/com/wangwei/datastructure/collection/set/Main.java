@@ -1,4 +1,4 @@
-package com.wangwei.datastructure.set;
+package com.wangwei.datastructure.collection.set;
 
 import com.wangwei.util.FileOperation;
 

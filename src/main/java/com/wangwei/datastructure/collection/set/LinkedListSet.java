@@ -1,4 +1,4 @@
-package com.wangwei.datastructure.set;
+package com.wangwei.datastructure.collection.set;
 
 import com.wangwei.datastructure.linkedlist.LinkedList;
 import com.wangwei.util.FileOperation;
@@ -44,7 +44,7 @@ public class LinkedListSet<E> implements Set<E> {
         System.out.println("Pride and Prejudice");
 
         ArrayList<String> words1 = new ArrayList<>();
-        if(FileOperation.readFile("D:\\workspace\\github\\Interview\\src\\main\\resources\\pride-and-prejudice.txt", words1)) {
+        if(FileOperation.readFile("pride-and-prejudice.txt", words1)) {
             System.out.println("Total words: " + words1.size());
 
             LinkedListSet<String> set1 = new LinkedListSet<>();
@@ -59,7 +59,7 @@ public class LinkedListSet<E> implements Set<E> {
         System.out.println("A Tale of Two Cities");
 
         ArrayList<String> words2 = new ArrayList<>();
-        if(FileOperation.readFile("D:\\workspace\\github\\Interview\\src\\main\\resources\\a-tale-of-two-cities.txt", words2)){
+        if(FileOperation.readFile("a-tale-of-two-cities.txt", words2)){
             System.out.println("Total words: " + words2.size());
 
             LinkedListSet<String> set2 = new LinkedListSet<>();

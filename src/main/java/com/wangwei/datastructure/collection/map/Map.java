@@ -1,4 +1,4 @@
-package com.wangwei.datastructure.map;
+package com.wangwei.datastructure.collection.map;
 
 public interface Map<K, V> {
 
@@ -6,7 +6,7 @@ public interface Map<K, V> {
 
     V remove(K key);
 
-    boolean contailns(K key);
+    boolean contains(K key);
 
     V get(K key);
 

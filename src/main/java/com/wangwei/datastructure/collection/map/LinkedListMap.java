@@ -1,4 +1,8 @@
-package com.wangwei.datastructure.map;
+package com.wangwei.datastructure.collection.map;
+
+import com.wangwei.util.FileOperation;
+
+import java.util.ArrayList;
 
 public class LinkedListMap<K, V> implements Map<K, V> {
 
@@ -66,7 +70,7 @@ public class LinkedListMap<K, V> implements Map<K, V> {
     }
 
     @Override
-    public boolean contailns(K key) {
+    public boolean contains(K key) {
         return getNode(key) != null;
     }
 
@@ -102,5 +106,29 @@ public class LinkedListMap<K, V> implements Map<K, V> {
           cur = cur.next;
       }
       return null;
+    }
+
+    public static void main(String[] args){
+
+        System.out.println("Pride and Prejudice");
+
+        ArrayList<String> words = new ArrayList<>();
+        if(FileOperation.readFile("pride-and-prejudice.txt", words)) {
+            System.out.println("Total words: " + words.size());
+
+            LinkedListMap<String, Integer> map = new LinkedListMap<>();
+            for (String word : words) {
+                if (map.contains(word))
+                    map.set(word, map.get(word) + 1);
+                else
+                    map.add(word, 1);
+            }
+
+            System.out.println("Total different words: " + map.size());
+            System.out.println("Frequency of PRIDE: " + map.get("pride"));
+            System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
+        }
+
+        System.out.println();
     }
 }
