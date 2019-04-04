@@ -62,12 +62,14 @@ public class MaxHeap<E extends Comparable<E>>  {
      * 向堆中添加元素
      * @param e
      */
-    public void add(E e){
-        data.addLast(e);
-        siftUp(data.size()  - 1);
-    }
-
-    private void siftUp(int k){
-        while (k > 0 && data.get(parent(k).))
-    }
+//    public void add(E e){
+//        data.addLast(e);
+//        siftUp(data.size  - 1);
+//    }
+//
+//    private void siftUp(int k){
+//        while (k > 0 && data.get(parent(k))){
+//
+//        }
+//    }
 }
