@@ -1,8 +1,7 @@
 package com.wangwei.demo;
 
-import lombok.extern.slf4j.Slf4j;
 
-import java.util.Random;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * 线程a负责随机掷一次骰子
@@ -11,21 +10,21 @@ import java.util.Random;
  * @Auther wangwei
  * @Date 2018/4/26 下午6:08
  */
-@Slf4j
+
 public class DiceDemo {
 
     private static volatile boolean flag = true;
     private static int count;
 
     public static void main(String[] args) {
-
+        A a = new A();
         while (flag){
-            A a = new A();
             new Thread(a).start();
             if (a.getNum() != 0){
                 new Thread(new B(a)).start();
             }
             if (a.getNum() == 3){
+
                 count++;
                 if (count == 3){
                     flag = false;
