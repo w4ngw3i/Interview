@@ -8,6 +8,7 @@ import java.lang.reflect.Proxy;
 
 /**
  * jdk动态代理测试类
+ *
  * @Auther wangwei
  * @Date 2018/5/5 下午3:16
  */
@@ -24,8 +25,8 @@ public class Test {
          * interfaces 实现接口
          * InvocationHandler h
          */
-       MoveAble m = (MoveAble) Proxy.newProxyInstance(carClass.getClassLoader(), carClass.getInterfaces(), h);
+        MoveAble m = (MoveAble) Proxy.newProxyInstance(carClass.getClassLoader(), carClass.getInterfaces(), h);
 
-       m.move();
+        m.move();
     }
 }

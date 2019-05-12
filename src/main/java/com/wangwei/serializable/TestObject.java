@@ -12,5 +12,5 @@ public class TestObject extends Parent implements Serializable {
 
     public int testValue = 300;
 
-    public  InnerObject innerObject = new InnerObject();
+    public InnerObject innerObject = new InnerObject();
 }

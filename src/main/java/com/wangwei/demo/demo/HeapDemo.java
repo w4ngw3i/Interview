@@ -1,7 +1,7 @@
 package com.wangwei.demo.demo;
 
 public class HeapDemo {
-    public static void main(String[] args)throws Exception {
+    public static void main(String[] args) throws Exception {
         System.out.println(true ^ false);
         System.out.println(true ^ true);
         System.out.println(true | true);

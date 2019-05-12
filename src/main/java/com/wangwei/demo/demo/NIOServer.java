@@ -34,8 +34,10 @@ public class NIOServer extends Thread {
             e.printStackTrace();
         }
     }
+
     private void sayHelloWorld(ServerSocketChannel server) throws IOException {
-        try (SocketChannel client = server.accept();) {          client.write(Charset.defaultCharset().encode("Hello world!"));
+        try (SocketChannel client = server.accept();) {
+            client.write(Charset.defaultCharset().encode("Hello world!"));
         }
     }
     // 省略了与前面类似的 main

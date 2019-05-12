@@ -5,8 +5,9 @@ import java.util.concurrent.BlockingQueue;
 
 public class ConsumerProducer {
     private static final String EXIT_MSG = "good bye!";
+
     public static void main(String[] args) {
-       BlockingQueue<String> queue = new ArrayBlockingQueue<>(2);
+        BlockingQueue<String> queue = new ArrayBlockingQueue<>(2);
         Producer producer = new Producer(queue);
         Consumer consumer = new Consumer(queue);
         new Thread(producer).start();
@@ -14,7 +15,7 @@ public class ConsumerProducer {
 
     }
 
-    static class Producer implements Runnable{
+    static class Producer implements Runnable {
         private BlockingQueue<String> blockingQueue;
 
         public Producer(BlockingQueue<String> blockingQueue) {
@@ -38,8 +39,8 @@ public class ConsumerProducer {
 
             try {
                 System.out.println("Time to say good bye!");
-             blockingQueue.put(EXIT_MSG);
-            }catch (InterruptedException e){
+                blockingQueue.put(EXIT_MSG);
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
@@ -47,7 +48,7 @@ public class ConsumerProducer {
         }
     }
 
-    static class Consumer implements Runnable{
+    static class Consumer implements Runnable {
 
         private BlockingQueue<String> blockingQueue;
 
@@ -60,14 +61,14 @@ public class ConsumerProducer {
 
             try {
                 String msg;
-                while (!EXIT_MSG.equalsIgnoreCase((msg = blockingQueue.take()))){
-                    System.out.println("Consumer item: "+ msg);
+                while (!EXIT_MSG.equalsIgnoreCase((msg = blockingQueue.take()))) {
+                    System.out.println("Consumer item: " + msg);
                     Thread.sleep(10l);
 
                 }
                 System.out.println("Got exit message, bye!");
 
-            }catch (InterruptedException e){
+            } catch (InterruptedException e) {
 
             }
         }

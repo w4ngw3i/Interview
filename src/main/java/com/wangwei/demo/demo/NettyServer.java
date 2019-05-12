@@ -13,8 +13,8 @@ public class NettyServer {
         Set<Object> set = properties.keySet();
         Iterator<Object> iterator = set.iterator();
 
-        while (iterator.hasNext()){
-            System.out.println(iterator.next().toString()+ ":" +properties.getProperty(iterator.next().toString()));
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next().toString() + ":" + properties.getProperty(iterator.next().toString()));
         }
 
 

@@ -6,7 +6,7 @@ public class Test {
     public static void main(String[] args) {
         System.out.println(+0.0f == -0.0F);
         System.out.println(+0.0f);
-        System.out.println(+0.0f/+0.0f);
+        System.out.println(+0.0f / +0.0f);
 
         System.out.println(NaN > 0);
 

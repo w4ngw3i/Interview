@@ -16,7 +16,7 @@ public class Demo1 {
 
     }
 
-    public  void test(List a){
+    public void test(List a) {
         a = new ArrayList();
         a.add(1);
 

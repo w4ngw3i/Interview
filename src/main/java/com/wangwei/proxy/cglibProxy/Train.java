@@ -6,7 +6,7 @@ package com.wangwei.proxy.cglibProxy;
  */
 public class Train {
 
-    public void movie(){
+    public void movie() {
         System.out.println("火车行驶中");
     }
 }

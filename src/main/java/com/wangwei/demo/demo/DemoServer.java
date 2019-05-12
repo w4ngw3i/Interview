@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
 public class DemoServer extends Thread {
     private ServerSocket serverSocket;
 
-    public int getPort(){
+    public int getPort() {
         return serverSocket.getLocalPort();
     }
 
@@ -22,20 +22,20 @@ public class DemoServer extends Thread {
         try {
             serverSocket = new ServerSocket(0);
             ExecutorService executorService = Executors.newFixedThreadPool(8);
-            while (true){
+            while (true) {
                 Socket socket = serverSocket.accept();
                 RequestHandler requestHandler = new RequestHandler(socket);
 //            requestHandler.start();
                 executorService.execute(requestHandler);
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if (serverSocket != null){
+        } finally {
+            if (serverSocket != null) {
                 try {
 
                     serverSocket.close();
-                }catch (IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }

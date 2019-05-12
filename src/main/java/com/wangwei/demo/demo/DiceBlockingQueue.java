@@ -17,20 +17,20 @@ public class DiceBlockingQueue {
 
     }
 
-    private static class A implements Runnable{
+    private static class A implements Runnable {
 
         private BlockingQueue<Integer> queue;
 
-        public A(BlockingQueue queue){
+        public A(BlockingQueue queue) {
             this.queue = queue;
         }
 
         @Override
-        public void run(){
-            while (flag){
-               int num = (int)(Math.random()*6+1);
+        public void run() {
+            while (flag) {
+                int num = (int) (Math.random() * 6 + 1);
                 try {
-                        queue.put(num);
+                    queue.put(num);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -38,32 +38,32 @@ public class DiceBlockingQueue {
         }
     }
 
-    private static class B implements Runnable{
+    private static class B implements Runnable {
 
         private BlockingQueue<Integer> queue;
 
-        public B(BlockingQueue queue){
+        public B(BlockingQueue queue) {
             this.queue = queue;
         }
 
         @Override
-        public void run(){
+        public void run() {
             int num;
             int count = 0;
-            while (flag){
+            while (flag) {
                 try {
                     num = queue.take();
-                    if (3 == num){
+                    if (3 == num) {
                         System.out.println("a线程本次掷的骰子数是: " + num);
                         count++;
-                        if (3 == count){
+                        if (3 == count) {
                             flag = false;
                             System.out.println("累计连续输出3个3,进程结束！！！");
                             queue.clear();
                         }
-                    }else{
-                      count = 0;
-                      System.out.println("a线程本次掷的骰子数是: " + num);
+                    } else {
+                        count = 0;
+                        System.out.println("a线程本次掷的骰子数是: " + num);
                     }
 
                 } catch (InterruptedException e) {

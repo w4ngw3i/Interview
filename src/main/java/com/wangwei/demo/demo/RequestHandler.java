@@ -6,7 +6,8 @@ import java.net.Socket;
 
 public class RequestHandler extends Thread {
     private Socket socket;
-    public RequestHandler(Socket socket){
+
+    public RequestHandler(Socket socket) {
         this.socket = socket;
     }
 
@@ -19,7 +20,7 @@ public class RequestHandler extends Thread {
             printWriter.println("hellow world");
 
             printWriter.flush();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

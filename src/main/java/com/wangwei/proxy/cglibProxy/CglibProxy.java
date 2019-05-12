@@ -15,7 +15,7 @@ public class CglibProxy implements MethodInterceptor {
 
     private Enhancer enhancer = new Enhancer();
 
-    public Object getProxy(Class c){
+    public Object getProxy(Class c) {
         //设置创建子类的类
         enhancer.setSuperclass(c);
         enhancer.setCallback(NoOp.INSTANCE);
@@ -24,9 +24,10 @@ public class CglibProxy implements MethodInterceptor {
 
     /**
      * 拦截所有目标类方法的调用
-     * @param o 目标类的实例
-     * @param method 目标方法的反射对象
-     * @param objects 方法参数
+     *
+     * @param o           目标类的实例
+     * @param method      目标方法的反射对象
+     * @param objects     方法参数
      * @param methodProxy 代理类的实例
      * @return
      * @throws Throwable

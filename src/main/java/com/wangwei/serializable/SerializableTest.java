@@ -13,7 +13,7 @@ import java.io.ObjectOutputStream;
  */
 @Slf4j
 public class SerializableTest {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
 
         /**
          * 序列化对象

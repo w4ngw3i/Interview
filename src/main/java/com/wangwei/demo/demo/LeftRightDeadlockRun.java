@@ -1,6 +1,6 @@
 package com.wangwei.demo.demo;
 
-public class LeftRightDeadlockRun implements Runnable{
+public class LeftRightDeadlockRun implements Runnable {
 
 
     private boolean flag;

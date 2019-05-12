@@ -13,7 +13,7 @@ import java.io.ObjectOutputStream;
  */
 @Slf4j
 public class SingletonTest {
-    public static void main(String[] args)throws Exception {
+    public static void main(String[] args) throws Exception {
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("singleton.out"));
         oos.writeObject(Singleton.getSingleton());
         oos.flush();

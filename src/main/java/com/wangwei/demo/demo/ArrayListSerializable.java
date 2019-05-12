@@ -1,7 +1,6 @@
 package com.wangwei.demo.demo;
 
 
-
 import java.io.*;
 import java.util.ArrayList;
 
@@ -13,7 +12,7 @@ public class ArrayListSerializable {
         list.add("demo");
         list.add("test");
 
-        System.out.println("Init list : "+ list );
+        System.out.println("Init list : " + list);
 
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("list"));
         oos.writeObject(list);
