@@ -1,10 +1,9 @@
-package com.wangwei.generic;
+package com.wangwei.javase.generic;
 
-import com.wangwei.datastructure.array.Array;
+
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class Demo1 {
     public static void main(String[] args) {

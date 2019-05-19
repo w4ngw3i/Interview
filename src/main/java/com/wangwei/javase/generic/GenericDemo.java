@@ -1,4 +1,4 @@
-package com.wangwei.generic;
+package com.wangwei.javase.generic;
 
 import java.util.ArrayList;
 import java.util.List;
