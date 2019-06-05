@@ -12,6 +12,11 @@ public class LocalDateDemo2 {
         System.out.println(date);
 
         LocalDate date1 = date.plusDays(1);
+        LocalDate date2 = date.minusDays(1);
+
+        System.out.println("tost:" +LocalDate.now().minusDays(1).toString());
+
+        System.out.println("date2:" + date2);
         System.out.println(date1);
 
         System.out.println(date);
